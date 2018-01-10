@@ -1,0 +1,44 @@
+//package Lab2;
+import javax.swing.JOptionPane;
+/**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* Class 		ExtractDigits
+* File  		ExtractDigits.java
+* Description 	Extract and display the four digits of a
+*				four-digit number. This program also demonstrates
+* 				the use of args String array (although trivially)
+* @author		Caitlin McMurchie
+* Environment 	PC, Windows 10, jdk1.8, NetBeans 8.2
+* Date 			1/8/2018
+* @version 		1.8
+* @see 			javax.swing.JOptionPane
+* History Log 	
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+public class ExtractDigits
+{
+ /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *<pre>
+ * Method 			main()
+ * Description  	Displays 4 digits and accesses command-line
+ * 					arguments
+ * @param 			args are the command line strings
+ * @author			Caitlin McMurchie
+ * Date				1/10/2018
+ *<pre>
+ *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/ 
+public static void main(String[] args)
+{
+	//check for valid number of arguments at command prompt: 2
+	if (args.length < 2)
+	{
+		System.out.println("usage: java ExtractDigits <month> <year>")
+		System.exit(1);
+	}
+	
+	//unlick C,C++, args[0] is the first arguments
+		//convert entries stores in args into integers
+	int month = Integer.valueOf(args[0].intValue90;
+	int year = Integer.valueOf(args[1].intValue90;
+	if (month < 1 || month >12) //illegal year
+	{
+		System.out.println("Year must be greater that 1969");
+		System.exit(1); //
