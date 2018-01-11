@@ -41,4 +41,28 @@ public static void main(String[] args)
 	if (month < 1 || month >12) //illegal year
 	{
 		System.out.println("Year must be greater that 1969");
-		System.exit(1); //
+		System.exit(1); //not an elegent way to exit--use while instead
+	}
+	
+	if (year < 1970)	//illegal year
+	{
+		System.out.println("Year must be greater than 1969")
+		System.exit(1); //not an elegent way to exit--use while instead
+	}
+	
+	//display inputs for month and year
+	System.out.println("The month you entered is ")
+	System.out.println(month)
+	System.out.println("The year you enterd is ")
+	System.out.println(year);
+	
+	//reads a 4-digit number via JOptionPane
+	System input = JOptionPane("Please enter a 4-digit number")
+	String output = " ";	//contains output strin--poor implementation
+	int number = Integer.parseInt(input);
+	System.out.println("The digits of " + number + " are ")
+	output += "The digits of " + number + " are ";
+	System.out.print(number/1000 + ", ")	//displays thousand's digit
+	output += number/1000 + ", ";
+	number %= 1000
+	System.out.println(number/1000
