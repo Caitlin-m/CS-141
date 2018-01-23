@@ -5,7 +5,7 @@
 * @author		          Caitlin McMurchie
 * Environment 	      PC, Windows 10, jdk1.8, NetBeans 8.2
 * Date 			           
-* @version 		        1.8
+* @version 		        1.0
 * @see 			           javax.swing.JOptionPane
 * History Log 	
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
