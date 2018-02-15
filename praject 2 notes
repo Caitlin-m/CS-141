@@ -1,0 +1,39 @@
+rember title - with date
+checking or unchecking discount box should recalculate invioce (checkbox.doClick(??????????))
+tool tips for everything
+save button (invoice with name and address) (add name and address to invoice to simplify????)
+    save button info in DentalApplication
+splash screen (w/loading bar???maby???)
+make sure GUI is not resizable
+do about jDialog (w/ copyright, GNU public liscence)
+MAKE REGULAR ZIP NOT!!!!! 7ZIP
+validation for parts: (woops thats bash not java)
+if 
+  parts = null 
+then 
+  parts = 0 
+total += parts
+elseif
+  parts<0
+then
+  "error message"
+else
+  total += parts
+fi
+
+finish JavaDocs
+  remember one for everything you've changed
+
+INVOICE FORMAT:
+
+customer:         customer name
+address:          1234 st. blahMcblah
+zip:              12345
+city:             blahblahblah
+
+Labor:            hours*rate/discount(only if checked)
+  (if discount checked){10% discount}
+cost of parts:    parts += parts*tax
+  sales tax:      parts*tax
+------------------------------------
+TOTAL:            total
