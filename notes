@@ -1,0 +1,26 @@
+PROJECT 3
+    shuffle cards
+    pick card
+    Keep track of the number of times the games is played and provide statistics 
+        (via menu choice) for mean, median and standard deviation
+    Provide statistics for the game.It might include simulation of the game n times 
+        (n = 1, 10, 100, 1000, ..., orwhatever valid number the user selects), with mean, 
+        median, and standard deviation
+    look over vb card game done for vb final
+    
+   
+LAB 6 EXTRA CREIT
+pt 1.
+    calculate square root
+    hint: see Programming Exercise 6.22
+    Write a Java GUI program that gets a positivereal numberfrom the user and
+        then displays the square root of the number using the Babylonian method 
+        for calculating the square root of that number
+    % error = (|exact - approximate|/exact) * 100
+         i.e. sqrt(135348) = exact(354.04519....) =~ approximate(354.045)
+         (|354.04519-354.045|/354.04519) * 100 =~ % 0.00005506
+    
+pt. 2
+    Add to the program in Problem Statement I by providing a second method, 
+        the Bakhshali method,for calculating the square root of a positive real number.
+        Compare the two methods for convergence.
