@@ -1,0 +1,32 @@
+when go clicked a random set of 4 cards are displayed, then count how many pickes/draws are required to get
+  a card from each suit
+  
+under action on the menue bar (statistics):
+    1) number of times the game has been played
+    2) min number of picks
+    3) max number of picks
+        i.e:    round 1: took 5 picks
+                round 2: took 7 picks
+                round 3: took 14 picks
+                round 4: took 9 picks
+               round 5: took 10 picks
+    4) mean average ( all picks added together / number of rounds) ((5+7+14+9+10)/5 = 45/5 = 9)
+    5) median = middle value ( dort from smallest to largest then pick middle number)( 5, 7, 9, 10, 14 = 9)
+         if two numbers in the middle take the average of the two
+    6) mode: most frequent occurance (number that repeats the most)
+    7) standard deviation (measures how much the mean, median, and mode differ)
+             |   xi   |   xi-mean     |  (xi-mean)^2  |
+             |--------|---------------|---------------|
+             |   5    |   5-9   = -4  |  (-4)^2 = 16  |
+             |   7    |   7-9   = -2  |  (-2)^2 = 4   |
+             |   14   |   14-9  = 5   |  (5)^2  = 25  |
+             |   9    |   9-9   = 0   |  (0)^2  = 0   |
+             |   10   |   10-9  = 1   |  (1)^2  = 1   |
+             |--------|---------------|---------------|
+             |   45   |       0       |   sqrt(46/4)  |
+        when statistics button pused make sure that the game has been played more than once, if not
+          display message saying that the game needs to be played more than once
+
+start with all four cards face down
+
+array lists in section 7.11 of book
