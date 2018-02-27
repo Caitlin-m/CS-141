@@ -1,0 +1,13 @@
+A.D.T.
+array:
+  1) decleration (type[] name;)
+  2) initialitaziotion  (new type[size];)
+  3) combine them with (type[] name = new type[size];)
+
+array features:
+  1) arrays are zero based
+  2) arrays have a length property which is equal to the size of the array
+  3) all elements must be of the same type
+  4) direct acess
+  5) contiguous memory allowcation
+  6) fixed in size (cannot shrink or enlarge)
