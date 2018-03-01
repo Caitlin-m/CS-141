@@ -1,14 +1,15 @@
 package Primes;
+
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*	Class:		Primes
-*	File:		PrimeNumbers.java
+*	Class:		    Primes
+*	File:		    PrimeNumbers.java
 *	Description:	Displays prime numbers, tests for primeness, prime
 *                       decomposition, and range of primes.
-*	@author:	Caitlin McMurchie
+*	@author:	    Caitlin McMurchie
 *	Environment:	PC, Windows 10, jdk1.8.0_151, NetBeans 8.2
-*	Date:		2/26/2018
-*	@version	1.0
-*       @see           	javax.swing.JOptionPane
+*	Date:		    2/26/2018
+*	@version	    1.0
+*   @see           	javax.swing.JOptionPane
 *	History Log:	2/26/18, 2/28/18
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -23,6 +24,7 @@ public class PrimeNumbers extends JFrame
     // Class instance field    
     private int whichRadio = 0;
     final int MAX_INPUT = 1000000;  // maximum number for prime test
+    
     /** Creates new form PrimeNumbers */
     public PrimeNumbers() 
     {
@@ -34,19 +36,7 @@ public class PrimeNumbers extends JFrame
         //center the form
         this.setLocationRelativeTo(null);
         listAllJTextField.requestFocus();        
-    }
-    
-        //set up image icon for JFrame
-        Image imageJFrame = Toolkit.getDefaultToolkit().getImage("src/walker.jpg");
-        
-        //set image for JFrame
-        setIconImage(imageJFrame);
-        setResizable(false);
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                exitForm(evt);
-            }
-        });                     
+    }                    
 
     private void lowJTextFieldActionPerformed(java.awt.event.ActionEvent evt) {                                              
       // Call calculateJButtonActionPerformed
@@ -75,7 +65,7 @@ public class PrimeNumbers extends JFrame
 
     private void calculateJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                 
         // Find primes for each selection
-        displayTextArea.setText("");    // clear display area
+        displayJTextArea.setText("");    // clear display area
         int whichButton = getButton();  // decide which radio button is selected
         switch(whichButton)
         {
@@ -83,7 +73,7 @@ public class PrimeNumbers extends JFrame
                 listPrimes();
                 break;
             case 2:         //display yes or no for test of primness
-                //testPrimes();     //TO DO
+                testIfPrime();    
                 break;
             case 3:         //display the prime factoriazation of a composite
                 //primeFactoriazation();    //TO DO
@@ -96,9 +86,8 @@ public class PrimeNumbers extends JFrame
                 break;
         }
     }                                                
-    // listPrimes();
-    // display the first n prime numbers
-    private void listPrimes()
+
+    private void listPrimes()// display the first n prime numbers
     {
         String message = "Illegal type--enter an integer >= 1 and < " +
                     MAX_INPUT;
@@ -117,7 +106,7 @@ public class PrimeNumbers extends JFrame
         int count = 1;      //keeps track of primes counted
         int trialNumber = 1;
         boolean isPrime = false;
-        StringBuffer ouput = new StringBuffer();
+        StringBuffer output = new StringBuffer();
         
         while (count < max)
         {
@@ -129,20 +118,85 @@ public class PrimeNumbers extends JFrame
                 count++;
             }
         }
-        }
-        catch(NumberFormatException numexp)
+        
+        //output the content of the array into the jtextarea
+        if(count == 1)
+            output.append("The first prime number is: \n\n");
+        else
+            output.append("The first " + max + " prime numbers are: \n\n");
+        
+        for(int i = 0; i< max; i++)
         {
-             // display error message
-             JOptionPane.showMessageDialog( null,
-               message,"Illegal Input", JOptionPane.WARNING_MESSAGE );
-             listAllJTextField.requestFocus();
-             listAllJTextField.selectAll();
+            output.append(primes[i] + "\t");
+            if((i + 1)% 5 == 0)
+            {
+                output.append("\n");
+            }
         }
-    }
-    boolean testPrime(int n)
+        displayJTextArea.setText(output.toString());
+        
+        }
+        catch(NumberFormatException numexp)// display error message
+        {
+            JOptionPane.showMessageDialog( null,
+               message,"Illegal Input", JOptionPane.WARNING_MESSAGE );
+            listAllJTextField.requestFocus();
+            listAllJTextField.selectAll();
+        }
+    }//end of listPrimes
+    
+  private void testIfPrime()
+  {
+      String message = "Illegal type--enter an integer >= 1 and < " +
+                    MAX_INPUT;
+        try
+        {            
+            int trialNumber = Integer.parseInt(isPrimeJTextField.getText());
+            message = "Illegal range--enter an integer >= 1 and < " +
+                    MAX_INPUT;
+            
+            if(trialNumber < 1 || trialNumber > MAX_INPUT)
+            {
+                throw new NumberFormatException();
+            }
+        boolean isPrime = testPrime(trialNumber);
+        if(isPrime)
+            displayJTextArea.setText(trialNumber + " is a prime number");
+        else
+            displayJTextArea.setText(trialNumber + " is not a prime number");
+        }//end try
+        
+        catch(NumberFormatException numexp)// display error message
+        {
+            JOptionPane.showMessageDialog( null,
+               message,"Illegal Input", JOptionPane.WARNING_MESSAGE );
+            isPrimeJTextField.requestFocus();
+            isPrimeJTextField.selectAll();
+        }//end catch
+  }
+    
+   //method to determin if a positive integer > 1 is a prime number
+   private boolean testPrime(int n)
     {
-        //TO DO
-    }
+       boolean isFactor = false;      
+        if(n == 2)
+            return true;
+        else
+        {
+            if((n % 2) == 0)// n is even
+                return false;           
+            else//check for the odd positive integers if there is a factor
+            {
+                for(int i = 3; !isFactor && i <= Math.sqrt(n); i += 2)
+                {
+                    if(n % i == 0)
+                        isFactor = true;
+                }//end for 
+                return !isFactor;
+            }//end else       
+        }//end else     
+    }//end testPrime
+    
     // method to return integer for which radio button is selected
     private int getButton()
     {
@@ -157,10 +211,11 @@ public class PrimeNumbers extends JFrame
         else
             return 5;             
     } 
+    
     private void clearJButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // Clear all, set focus on listAllJRadioButton
         listAllJRadioButton.setSelected(true);
-        displayTextArea.setText("");
+        displayJTextArea.setText("");
     }                                            
 
     private void rangeJRadioButtonItemStateChanged(java.awt.event.ItemEvent evt) {                                                   
@@ -178,7 +233,7 @@ public class PrimeNumbers extends JFrame
             highJTextField.setText("");
             lowJTextField.setEditable(false);
             highJTextField.setEditable(false);
-            displayTextArea.setText("");
+            displayJTextArea.setText("");
         }        
     }                                                  
 
@@ -194,7 +249,7 @@ public class PrimeNumbers extends JFrame
         {
             factorizationJTextField.setText("");
             factorizationJTextField.setEditable(false);
-            displayTextArea.setText("");
+            displayJTextArea.setText("");
         }        
     }                                                          
 
@@ -210,7 +265,7 @@ public class PrimeNumbers extends JFrame
         {
             isPrimeJTextField.setText("");
             isPrimeJTextField.setEditable(false);
-            displayTextArea.setText("");
+            displayJTextArea.setText("");
         }
     }                                                    
 
@@ -226,7 +281,7 @@ public class PrimeNumbers extends JFrame
         {
             listAllJTextField.setText("");
             listAllJTextField.setEditable(false);
-            displayTextArea.setText("");
+            displayJTextArea.setText("");
         }
     }                                                    
 
@@ -239,3 +294,60 @@ public class PrimeNumbers extends JFrame
     private void exitForm(java.awt.event.WindowEvent evt) {                          
         System.exit(0);
     }                         
+
+    private void listAllJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        
+        // Select the corresponding menu choice
+        listPrimesJRadioButtonMenuItem.setSelected(true);
+    }                                                   
+
+    private void isPrimeJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                    
+        // Select the corresponding menu choice
+        testForPrimeJRadioButtonMenuItem.setSelected(true);
+    }                                                   
+
+    private void factorizationJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                          
+        // Select the corresponding menu choice
+        primeFactorizationJRadioButtonMenuItem.setSelected(true);
+    }                                                         
+
+    private void rangeJRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {                                                  
+        // Select the corresponding menu choice
+        rangeOfPrimesJRadioButtonMenuItem.setSelected(true);
+    }                                                 
+
+    private void listPrimesJRadioButtonMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                                               
+        // Select the corresponding radio button
+        isPrimeJRadioButton.setSelected(true);
+    }                                                              
+
+    private void testForPrimeJRadioButtonMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                                                 
+        /// Select the corresponding radio button
+        isPrimeJRadioButton.setSelected(true);
+    }                                                                
+
+    private void primeFactorizationJRadioButtonMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                                                       
+        // Select the corresponding radio button
+        factorizationJRadioButton.setSelected(true);
+    }                                                                      
+
+    private void rangeOfPrimesJRadioButtonMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                                                  
+        // Select the corresponding radio button
+        rangeJRadioButton.setSelected(true);
+    }                                                                 
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) 
+    {
+       // Show main form centered
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+	PrimeNumbers myPrimes = new PrimeNumbers();
+        int x = (screen.width - myPrimes.getWidth())/2;
+        int y = (screen.height - myPrimes.getHeight())/2;
+        myPrimes.setBounds(x, y ,myPrimes.getWidth(), myPrimes.getHeight());
+
+        myPrimes.setVisible(true);
+
+    }
