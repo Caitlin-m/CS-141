@@ -1,0 +1,35 @@
+Searching/Sorting:
+  Linear Searching/Sequestial Searching:
+      goes through an array starting at zero and goind to the end or until it finds what it's looking for
+      * simple
+      * easy
+      * works on any data
+      * SLOW
+      * average n/2 comparisons
+      * O(n)
+   
+   Binary Search:
+      * more complex
+      * 
+ Sorting:
+    Quick:
+    Merge:
+    Heap:
+    
+      
+MEMORIZE:
+LINEAR SEARCH algorithm
+    private static int linearSearch(int[] anArray, int key) 
+    {
+        for (int i = 0; i < anArray.length; i++)
+        {
+            if(anArray[i] == key)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+BINARY SEARCH algorithm
+INSERTION algorithm
+SELECTION algorithm
