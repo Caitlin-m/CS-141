@@ -1,16 +1,15 @@
 package Primes;
-
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *	Class:		Primes
 *	File:		PrimeNumbers.java
 *	Description:	Displays prime numbers, tests for primeness, prime
 *                       decomposition, and range of primes.
-*	@author:	Niko Culevski
-*	Environment:	PC, Windows XP Pro, jdk1.6.17, NetBeans 6.8
-*	Date:		5/14/2010
-*	@version	%1% %2%
+*	@author:	Caitlin McMurchie
+*	Environment:	PC, Windows 10, jdk1.8.0_151, NetBeans 8.2
+*	Date:		2/26/2018
+*	@version	1.0
 *       @see           	javax.swing.JOptionPane
-*	History Log:	Updated from 10/2/2001, 4/13/2005, 10/14/2006, 10/5/2009
+*	History Log:	2/26/18, 2/28/18
 *~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 import java.awt.print.PrinterException;
