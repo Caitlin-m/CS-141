@@ -1,6 +1,8 @@
 when go clicked a random set of 4 cards are displayed, then count how many pickes/draws are required to get
   a card from each suit
   
+ArrayLists ?????
+  
 under action on the menue bar (statistics):
     1) number of times the game has been played
     2) min number of picks
@@ -9,13 +11,13 @@ under action on the menue bar (statistics):
                 round 2: took 7 picks
                 round 3: took 14 picks
                 round 4: took 9 picks
-               round 5: took 10 picks
+                round 5: took 10 picks
     4) mean average ( all picks added together / number of rounds) ((5+7+14+9+10)/5 = 45/5 = 9)
     5) median = middle value ( dort from smallest to largest then pick middle number)( 5, 7, 9, 10, 14 = 9)
          if two numbers in the middle take the average of the two
-    6) mode: most frequent occurance (number that repeats the most)
+    6) mode: most frequent occurance (number (of picks) that repeats the most)
     7) standard deviation (measures how much the mean, median, and mode differ)
-             |   xi   |   xi-mean     |  (xi-mean)^2  |
+             |   x1   |   x1-mean     |  (x1-mean)^2  |
              |--------|---------------|---------------|
              |   5    |   5-9   = -4  |  (-4)^2 = 16  |
              |   7    |   7-9   = -2  |  (-2)^2 = 4   |
@@ -30,3 +32,12 @@ under action on the menue bar (statistics):
 start with all four cards face down
 
 array lists in section 7.11 of book
+
+re-name all card pictures to incluse face and number
+
+save button: save results of all players and not just current player???
+
+to generate new cards: shuffle the deck each time then pick just the top 4, or pick a random int then take 
+  corisponding card in array
+  once all four suits are displayed reset the deck
+
