@@ -1,0 +1,52 @@
+Final exam will cover:
+  chapter 1-8 from book
+  5 write code problems
+    one will be a write code for a linear or binary search
+    one will be a code to write an arrya to generate random integers, and the doing something to that array (like find the mean,
+      or median)
+  50 points for multiple choice
+  10 for write code (if only doins 2 point questions)
+      
+
+SORTING:
+  Binary searching: O(log_2(n))
+    more complex
+    much faster
+    data must be sorted
+    
+  Slow: O(n^2)
+    bubble
+    insertion
+    selection
+    
+  Slow: O(log_2(n))
+    quick
+    merege
+    heap
+    
+  Hashing:  O(1)
+    fastest
+    has problems with colision
+    
+Sorting Algorithems:
+  bubble sorting:
+    start with the first element(i) and then compare it to the next(j) if i is greater than i j is moved into i place, and contnues
+      if i is less than j, j is compared to the next number, and so on
+5 4 10 3 8 9 6 1 7 2
+4 5 3 8 9 1 6 7 2 10
+4 3 5 8 1 6 7 2 9 10
+3 4 5 1 6 7 2 8 9 10
+3 4 1 5 6 2 7 8 9 10
+3 1 4 5 2 6 7 8 9 10
+1 3 4 2 5 6 7 8 9 10
+1 3 2 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10
+  (9 loops to sort 10 numbers)
+  
+  insertion sorting:
+    works in the opposit direction of bubble sorting
+    start with the array(0) and then compare it to the array(1) if array(1) has a value less than array(0) then they switch positions
+    if array(3) is greater than array(0) and array(1), then is moves to array(0), and so on
+ 
+ 
+    
