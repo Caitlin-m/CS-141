@@ -78,6 +78,64 @@ public class FinalExamQuestions {
         System.out.println("");
     }
     
+//insertion sort
+    public static void insertionSort(int[] array)
+    {
+        int i,j;
+        for ( i = 0; i < array.length; i ++)
+        {
+            int a = array[i];
+            j = i - 1;
+            while (j >= 0 && array[j] > a)
+            {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + i] = a;
+        }
+    }
+
+    //selection sort
+    public static void selectionSort(int[] array)
+    {
+        for(int i = 0; i <array.length; i++)
+        {
+            int min = findMinimum(array, i);
+            int temp = array[i];
+            array[i] = array[min];
+            array[min] = temp;
+        }
+    }
+    
+    public static int findMinimum(int[] anArray , int i)
+    {
+        int j, min = i;
+        for (j = i + 1; j < anArray.length; j++)
+        {
+           if( anArray[j] < anArray[min])
+               min = j;
+        }
+        return  min;
+    }
+    //buble sort -- not a good one
+    public static void bubbleSort(int[] array, int len)
+    {
+        int temp;
+        int high = len -1;
+        for(int a  = 0; a < high - a; a++)
+        {
+            for (int b = 0; b < high - a; b++)
+            {
+                if(array[b] > array[b + 1])
+                {
+                    temp =array[b];
+                    array[b] = array[b +1 ];
+                    array[b + 1] = temp;
+                }
+            }
+        }
+    }
+    
     private static int linearSearch(int[] anArray, int key) 
     {
         for (int i = 0; i < anArray.length; i++)
@@ -86,6 +144,25 @@ public class FinalExamQuestions {
             {
                 return i;
             }
+        }
+        return -1;
+    }
+    
+    public static int binarySearch(int[] anArray, int key) 
+    {
+        int low = 0;
+        int high = (anArray.length - 1);    //.length will give you how many 
+        //items are in the array, not the index number
+        int middle;
+        while (low <= high)
+        {
+            middle  = (low + high)/2;
+            if(key == anArray[middle])
+                return middle;
+            else if (key < anArray[middle])
+                high = middle -1;
+            else
+                low = middle +1;
         }
         return -1;
     }
