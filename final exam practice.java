@@ -72,7 +72,10 @@ public class FinalExamQuestions {
             System.out.println(key + " is in the array at index " + posistion);
      
     //sort the array in ascending order -- by "cheating"
-    Arrays.sort(myArray);
+    //selectionSort(myArray);
+    //bubbleSort(myArray);
+    //array.sort(myArray);
+    insertionSort(myArray);
         System.out.println("The original array sorted is: ");
         displayArray(myArray);
         System.out.println("");
