@@ -63,4 +63,8 @@ catch(NumberFormatException numexp)// display error message
         return -1;
     }
 ------------------------------------------------------------------------------------------------------------------------
-
+    private void AboutJMenuItemActionPerformed(java.awt.event.ActionEvent evt) {                                               
+        // shows about form
+        About myAbout = new About(this, true);
+        myAbout.setVisible(true);
+    } 
