@@ -41,3 +41,6 @@ to generate new cards: shuffle the deck each time then pick just the top 4, or p
   corisponding card in array
   once all four suits are displayed reset the deck
 
+send players picks to an arraylist, then pass to statistics, and use array = arraylist.toArray to sort
+
+swing timer
