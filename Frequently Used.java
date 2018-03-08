@@ -1,12 +1,12 @@
 this.setLocationRelativeTo(null);   //centers form
-this.getRootPane().setDefaultButton(CalculateJButton); // sets default button
+this.getRootPane().setDefaultButton(JButton); // sets default button
 this.setIconImage(Toolkit.getDefaultToolkit().getImage("/src/Picture.jpg"));// set icon for form
  ------------------------------------------------------------------------------------------------------------------------
 private void setDate()
 {   
     DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
     Date date = new Date();
-    this.setTitle("Loan Calculator--" + dateFormat.format(date));
+    this.setTitle("project name --" + dateFormat.format(date));
 }
 ------------------------------------------------------------------------------------------------------------------------
 private StringBuffer padSpaces(String first, String second)
