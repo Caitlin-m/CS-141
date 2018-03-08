@@ -1,0 +1,74 @@
+Still meating on Monday
+
+remember icon for Project 3
+
+two prints, players staticstics and print the GUI
+
+save is the same as printing the statistics just with saving it to a text file
+    playerName_stasticts_date.txt
+    
+arrays.sort allowed
+
+Open not required but is extra credit (opens a players save file)
+
+in tests folder, review old quizes and exams
+
+----------------------------------------------------------------------------------------------------------------------
+Multiple-Subscripted(Multi-Dimensional) Arrays
+
+technicaly speaking java has no Multi-Dimensional arrays, just arrays of arrays
+
+   _0___1___2___3_
+0 |___|___|___|___|
+1 |___|___|___|___|
+2 |___|___|___|___|
+
+"Multi-Dimensional"                 
+|_0_| ------------> |_1_|_2_|         = Array 1
+|_1_| ------------> |_a_|_b_|_c_|_d_| = Array 2
+|_2_|-------------> |_!_|_@_|_#_|_$_| = Array 3
+each item in the "Multi-Dimensional" array references another array also called a "Jagged" array
+
+Multi-Dimensional[2].length = 4
+Multi-Dimensional[1]/length = 2
+Multi-Dimensional.length = 3
+
+Best thing about arrays: instant acess to an element
+Worst thing about arrays: must be assigned continously in memory
+
+----------------------------------------------------------------------------------------------------------------------
+Array Lists:
+
+to initiliaze:
+  ArrayList myArrayList = new ArrayList()
+
+Special because you can change the capacity and size of the array
+
+do not have a length propery, instead they have a size
+
+myArrayList(5) = capacity of 5
+myArrayList.size(5) = size of 5
+myArrayList(5) ≠ myArrayList.size(5)
+
+To print the content of a ArrayList
+  System.out.println("Content of myArrayList: " + myArrayList);
+  
+To add an item to an ArrayList:
+  myArrayList.add(whatever)
+
+To delete an item from an Arraylist:
+  myArrayList.remove("F"); Removes the first occurance of F
+  myArrayList.remove(2); Removes the item at index 2
+  
+To retreive an item:
+  myArrayList.get(index number);
+    comes back as an object, not the origional type of the item
+
+You can copy and ArrayList to an Array and then sort  with:
+  Array = myArrayList.toArray()
+  Arrays.sort(Array)
+  
+An ArrayList can have integers, strings, chars, and booleans but it then cannot be cast into an 
+  Array, so sorting becomes a problem
+
+ 
