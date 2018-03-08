@@ -68,3 +68,5 @@ catch(NumberFormatException numexp)// display error message
         About myAbout = new About(this, true);
         myAbout.setVisible(true);
     } 
+------------------------------------------------------------------------------------------------------------------------
+ Scanner input = new Scanner(new File("src/" + name)); // reads file
