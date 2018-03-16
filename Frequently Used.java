@@ -138,5 +138,9 @@ catch(NumberFormatException numexp)// display error message
         myAbout.setVisible(true);
     } 
 ------------------------------------------------------------------------------------------------------------------------
- String name = "Name of file";
  Scanner input = new Scanner(new File("src/" + name)); // reads file
+        while (input.hasNextInt()) 
+        {
+            int next = input.nextInt();
+            count[next]++;
+        }
