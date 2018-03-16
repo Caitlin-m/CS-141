@@ -104,8 +104,7 @@ catch(NumberFormatException numexp)// display error message
     public static int binarySearch(int[] anArray, int key) 
     {
         int low = 0;
-        int high = (anArray.length - 1);    //.length will give you how many 
-        //items are in the array, not the index number
+        int high = (anArray.length - 1);    //.length will give you how many items are in the array, not the index number
         int middle;
         while (low <= high)
         {
@@ -139,4 +138,5 @@ catch(NumberFormatException numexp)// display error message
         myAbout.setVisible(true);
     } 
 ------------------------------------------------------------------------------------------------------------------------
+ String name = "Name of file";
  Scanner input = new Scanner(new File("src/" + name)); // reads file
